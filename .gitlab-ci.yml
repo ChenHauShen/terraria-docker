@@ -1,0 +1,13 @@
+image: docker:latest
+
+stages:
+  - build
+
+dockerbuild:
+  stage: build
+  tags:
+    - docker-01
+  script:
+    - docker login -u "${REGISTRY_USERNAME}" -p "${REGISTRY_PASSWORD}" $REGISTRY_SERVER_ADDRESS
+    - docker build -t $REGISTRY_SERVER_ADDRESS/chenhaoshen/terraria-docker .
+    - docker push $REGISTRY_SERVER_ADDRESS/chenhaoshen/terraria-docker
