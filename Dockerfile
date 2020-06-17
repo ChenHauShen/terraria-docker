@@ -7,9 +7,9 @@ RUN apk add --update-cache \
 COPY bootstrap.sh /tshock/bootstrap.sh
 
 # 下载和解压 TShock
-ADD https://github.com/Pryaxis/TShock/releases/download/v4.4.0-pre8/TShock_4.4.0_Pre8_Terraria1.4.0.4.zip /
-RUN unzip TShock_4.4.0_Pre8_Terraria1.4.0.4.zip -d /tshock && \
-    rm TShock_4.4.0_Pre8_Terraria1.4.0.4.zip && \
+ADD https://github.com/Pryaxis/TShock/releases/download/v4.4.0-pre11/TShock4.4.0_Pre11_Terraria1.4.0.5.zip /
+RUN unzip TShock4.4.0_Pre11_Terraria1.4.0.5.zip -d /tshock && \
+    rm TShock4.4.0_Pre11_Terraria1.4.0.5.zip && \
     chmod +x /tshock/TerrariaServer.exe && \
     # 将bootstrap.sh添加可执行权限
     chmod +x /tshock/bootstrap.sh
